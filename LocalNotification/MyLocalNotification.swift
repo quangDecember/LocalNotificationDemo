@@ -17,6 +17,7 @@ struct LocalNotificationManager {
             let content = UNMutableNotificationContent()
             content.title = "Don't forget"
             content.body = "Buy some milk"
+            content.categoryIdentifier = "MEETING_INVITATION"
             content.sound = UNNotificationSound.default
             // Define the custom actions.
             let acceptAction = UNNotificationAction(identifier: "ACCEPT_ACTION",
@@ -50,7 +51,7 @@ struct LocalNotificationManager {
             
             let center = UNUserNotificationCenter.current()
             //.delegate = LocalNotificationDelegater.init()
-            content.categoryIdentifier = "MEETING_INVITATION"
+            
             
             center.add(request, withCompletionHandler: { (error) in
                 if let error = error {
@@ -115,6 +116,7 @@ struct LocalNotificationManager {
             let content = UNMutableNotificationContent()
             content.title = "Weekly Staff Meeting"
             content.body = "Every Tuesday at 2pm"
+            content.categoryIdentifier = "MEETING_INVITATION"
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 12,
                                                             repeats: false)
             // Create the request
