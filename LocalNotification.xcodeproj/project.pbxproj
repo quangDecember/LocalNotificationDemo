@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B02BA39223A374C00D7D834 /* sonic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B02BA38223A374C00D7D834 /* sonic.jpg */; };
 		8BDD1D542237545900294F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD1D532237545900294F1C /* AppDelegate.swift */; };
 		8BDD1D562237545900294F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD1D552237545900294F1C /* ViewController.swift */; };
 		8BDD1D592237545900294F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD1D572237545900294F1C /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B02BA38223A374C00D7D834 /* sonic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sonic.jpg; sourceTree = "<group>"; };
 		8BDD1D502237545900294F1C /* LocalNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDD1D532237545900294F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BDD1D552237545900294F1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		8BDD1D522237545900294F1C /* LocalNotification */ = {
 			isa = PBXGroup;
 			children = (
+				8B02BA38223A374C00D7D834 /* sonic.jpg */,
 				8BDD1D532237545900294F1C /* AppDelegate.swift */,
 				8BDD1D552237545900294F1C /* ViewController.swift */,
 				8BDD1D572237545900294F1C /* Main.storyboard */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B02BA39223A374C00D7D834 /* sonic.jpg in Resources */,
 				8BDD1D5E2237545C00294F1C /* LaunchScreen.storyboard in Resources */,
 				8BDD1D5B2237545C00294F1C /* Assets.xcassets in Resources */,
 				8BDD1D592237545900294F1C /* Main.storyboard in Resources */,
@@ -287,14 +291,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96SA7S73QM;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LocalNotification/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.rewardsdk.app;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.rewardsdk.notifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -306,14 +310,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96SA7S73QM;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LocalNotification/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.rewardsdk.app;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.rewardsdk.notifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

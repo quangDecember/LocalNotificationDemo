@@ -8,6 +8,7 @@
 
 import Foundation
 import UserNotifications
+import UIKit
 
 struct LocalNotificationManager {
     
@@ -117,6 +118,12 @@ struct LocalNotificationManager {
             content.title = "Weekly Staff Meeting"
             content.body = "Every Tuesday at 2pm"
             content.categoryIdentifier = "MEETING_INVITATION"
+            if let sonicFileURL = Bundle.main.url(forResource: "sonic", withExtension: "jpg") {
+                do {
+                    content.attachments = try [UNNotificationAttachment.init(identifier: "sonic", url: sonicFileURL, options: nil)]
+                }
+                catch {}
+            }
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 12,
                                                             repeats: false)
             // Create the request
