@@ -34,14 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        LocalNotificationManager.init().makeAppNotifications()
         LocalNotificationManager.init().makeNotification()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        
-        LocalNotificationManager.init().removeAllNotifications()
+        LocalNotificationManager.init().makeAppNotifications()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -57,23 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 @available (iOS 10.0, *)
 extension AppDelegate : UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        print("\(#function): \(String(describing: notification))")
-    }
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("\(#function): \(response)")
-        if let userInfo = response.notification.request.content.userInfo as? [String : AnyObject] {
-            debugPrint(userInfo)
-        }
-        print(response.notification.request.identifier)
         LocalNotificationManager.init().handle(notification: response.notification, actionIdentifier: response.actionIdentifier)
         completionHandler()
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("\(#function): \(notification)")
-        if let userInfo = notification.request.content.userInfo as? [String : AnyObject] {
-            debugPrint(userInfo)
-        }
-        completionHandler(.alert)
+        print("\(#function)")
     }
 }

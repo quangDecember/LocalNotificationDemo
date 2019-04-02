@@ -163,6 +163,3 @@ struct LocalNotificationManager {
         }
     }
 }
-class LocalNotificationDelegater: NSObject {
-    static let shared = LocalNotificationDelegater.init()
-}
