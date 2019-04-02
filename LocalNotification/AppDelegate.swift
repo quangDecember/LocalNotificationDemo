@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
         LocalNotificationManager.init().requestPermission()
         return true
     }
@@ -50,3 +55,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+@available (iOS 10.0, *)
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+        print("\(#function): \(String(describing: notification))")
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("\(#function): \(response)")
+        if let userInfo = response.notification.request.content.userInfo as? [String : AnyObject] {
+            debugPrint(userInfo)
+        }
+        print(response.notification.request.identifier)
+        LocalNotificationManager.init().handle(notification: response.notification, actionIdentifier: response.actionIdentifier)
+        completionHandler()
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("\(#function): \(notification)")
+        if let userInfo = notification.request.content.userInfo as? [String : AnyObject] {
+            debugPrint(userInfo)
+        }
+        completionHandler(.alert)
+    }
+}

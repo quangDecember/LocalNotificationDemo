@@ -9,8 +9,18 @@
 import Foundation
 import UserNotifications
 import UIKit
+import SafariServices
 
 struct LocalNotificationManager {
+    
+    init() {
+        
+        if #available(iOS 10.0, *) {
+            
+        } else {
+            // Fallback on earlier versions
+        }
+    }
     
     func makeNotification() {
         if #available(iOS 10.0, *) {
@@ -23,7 +33,7 @@ struct LocalNotificationManager {
             // Define the custom actions.
             let acceptAction = UNNotificationAction(identifier: "ACCEPT_ACTION",
                                                     title: "Accept",
-                                                    options: UNNotificationActionOptions(rawValue: 0))
+                                                    options: .foreground)
             let declineAction = UNNotificationAction(identifier: "DECLINE_ACTION",
                                                      title: "Decline",
                                                      options: UNNotificationActionOptions(rawValue: 0))
@@ -140,20 +150,19 @@ struct LocalNotificationManager {
             }
         }
     }
+    @available(iOS 10.0, *)
+    func handle(notification: UNNotification, actionIdentifier: String) {
+        if notification.request.identifier == "UYLLocalNotification" && actionIdentifier == "ACCEPT_ACTION" {
+            let s = SFSafariViewController.init(url: URL.init(string: "https://www.google.com")!)
+            if var topViewController: UIViewController = UIApplication.shared.keyWindow?.rootViewController {
+                while let presentedViewController = topViewController.presentedViewController {
+                    topViewController = presentedViewController
+                }
+                topViewController.present(s, animated: true, completion: nil)
+            }
+        }
+    }
 }
 class LocalNotificationDelegater: NSObject {
-    
-}
-
-@available (iOS 10.0, *)
-extension LocalNotificationDelegater : UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        
-    }
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-    }
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-    }
+    static let shared = LocalNotificationDelegater.init()
 }
