@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import frameworkwithnotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Fallback on earlier versions
         }
         LocalNotificationManager.init().requestPermission()
+        FrameworkInstance.shared.start()
         return true
     }
 
