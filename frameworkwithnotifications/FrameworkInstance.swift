@@ -15,6 +15,7 @@ public class FrameworkInstance {
     public func start() {
         NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil, using: {note in
             let SignInMessage = InAppMessageController.init(nibName: "InAppMessageController", bundle: Bundle.init(for: InAppMessageController.self))
+                //GoogleWebViewController.init(nibName: "GoogleWebViewController", bundle: Bundle.init(for: GoogleWebViewController.self))
             UIApplication.shared.getTopViewController()?.present(SignInMessage, animated: true, completion: nil)
         })
     }

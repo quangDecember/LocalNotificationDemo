@@ -16,6 +16,8 @@
 		8BA159EB2255E810002E2F30 /* InAppMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BA159E92255E810002E2F30 /* InAppMessageController.xib */; };
 		8BA159ED22560465002E2F30 /* UIApplication+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA159EC22560465002E2F30 /* UIApplication+extensions.swift */; };
 		8BA159EF22560534002E2F30 /* FrameworkInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA159EE22560534002E2F30 /* FrameworkInstance.swift */; };
+		8BA159F22256FA19002E2F30 /* GoogleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA159F02256FA18002E2F30 /* GoogleWebViewController.swift */; };
+		8BA159F32256FA19002E2F30 /* GoogleWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BA159F12256FA19002E2F30 /* GoogleWebViewController.xib */; };
 		8BDD1D542237545900294F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD1D532237545900294F1C /* AppDelegate.swift */; };
 		8BDD1D562237545900294F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD1D552237545900294F1C /* ViewController.swift */; };
 		8BDD1D592237545900294F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD1D572237545900294F1C /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		8BA159E92255E810002E2F30 /* InAppMessageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InAppMessageController.xib; sourceTree = "<group>"; };
 		8BA159EC22560465002E2F30 /* UIApplication+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extensions.swift"; sourceTree = "<group>"; };
 		8BA159EE22560534002E2F30 /* FrameworkInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkInstance.swift; sourceTree = "<group>"; };
+		8BA159F02256FA18002E2F30 /* GoogleWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleWebViewController.swift; sourceTree = "<group>"; };
+		8BA159F12256FA19002E2F30 /* GoogleWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleWebViewController.xib; sourceTree = "<group>"; };
 		8BDD1D502237545900294F1C /* LocalNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDD1D532237545900294F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BDD1D552237545900294F1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		8B6323B422448D78000FF974 /* frameworkwithnotifications */ = {
 			isa = PBXGroup;
 			children = (
+				8BA159F02256FA18002E2F30 /* GoogleWebViewController.swift */,
+				8BA159F12256FA19002E2F30 /* GoogleWebViewController.xib */,
 				8B6323B522448D78000FF974 /* frameworkwithnotifications.h */,
 				8B6323B622448D78000FF974 /* Info.plist */,
 				8B6323C022448E12000FF974 /* FrameworkConfiguration.swift */,
@@ -228,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA159F32256FA19002E2F30 /* GoogleWebViewController.xib in Resources */,
 				8BA159EB2255E810002E2F30 /* InAppMessageController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +260,7 @@
 				8BA159EA2255E810002E2F30 /* InAppMessageController.swift in Sources */,
 				8BA159EF22560534002E2F30 /* FrameworkInstance.swift in Sources */,
 				8BA159ED22560465002E2F30 /* UIApplication+extensions.swift in Sources */,
+				8BA159F22256FA19002E2F30 /* GoogleWebViewController.swift in Sources */,
 				8B6323C122448E12000FF974 /* FrameworkConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

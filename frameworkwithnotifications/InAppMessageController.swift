@@ -16,9 +16,9 @@ public class InAppMessageController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let mainURL = URL.init(string: "https://www.google.com")!
+        
         mainWebView.navigationDelegate = self
-        mainWebView.load(URLRequest.init(url: mainURL))
+        
     }
 
 
@@ -31,5 +31,13 @@ public class InAppMessageController: UIViewController, WKNavigationDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let mainURL = URL.init(string: "https://spotify.com")!
+        mainWebView.load(URLRequest.init(url: mainURL))
+        self.view.bringSubviewToFront(mainWebView)
+    }
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+    }
 }
